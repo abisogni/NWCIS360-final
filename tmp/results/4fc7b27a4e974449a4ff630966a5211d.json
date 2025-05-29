@@ -1,0 +1,118 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        550,
+        511,
+        86,
+        86
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        526,
+        244,
+        262,
+        262
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "box": [
+        502,
+        220,
+        274,
+        274
+      ]
+    },
+    {
+      "frame": "frame_0002.jpg",
+      "box": [
+        502,
+        233,
+        270,
+        270
+      ]
+    },
+    {
+      "frame": "frame_0003.jpg",
+      "box": [
+        517,
+        245,
+        254,
+        254
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        235,
+        168,
+        975,
+        712
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        228,
+        159,
+        979,
+        713
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 1,
+      "label": "cell phone",
+      "box": [
+        738,
+        250,
+        841,
+        444
+      ]
+    },
+    {
+      "frame": "frame_0002.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        225,
+        158,
+        981,
+        712
+      ]
+    },
+    {
+      "frame": "frame_0002.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        757,
+        147,
+        800,
+        256
+      ]
+    },
+    {
+      "frame": "frame_0003.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        229,
+        167,
+        976,
+        712
+      ]
+    }
+  ],
+  "transcript": "Okay, this is a test video."
+}

@@ -1,0 +1,91 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        514,
+        182,
+        228,
+        228
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "box": [
+        511,
+        186,
+        230,
+        230
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        222,
+        127,
+        1028,
+        712
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "bottle",
+      "box": [
+        864,
+        232,
+        950,
+        540
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        760,
+        147,
+        800,
+        257
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        221,
+        127,
+        1030,
+        712
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 1,
+      "label": "bottle",
+      "box": [
+        864,
+        236,
+        956,
+        542
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        759,
+        147,
+        800,
+        257
+      ]
+    }
+  ],
+  "transcript": "Flasche."
+}

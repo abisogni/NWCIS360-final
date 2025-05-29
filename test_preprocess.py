@@ -1,6 +1,6 @@
 from preprocess.preprocess import extract_frames, extract_audio
 
-VIDEO = "test_qt.mov"
+VIDEO = "test_flasche.mov"
 FRAMES_OUT = "tmp/frames_test"
 AUDIO_OUT  = "tmp/audio_test.wav"
 

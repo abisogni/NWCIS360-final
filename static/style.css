@@ -1,0 +1,30 @@
+/* static/style.css */
+
+/* Ensure the video preview and canvas are same width */
+#preview, #resultCanvas {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+/* Center the start/stop button */
+#recordBtn {
+  margin-top: 8px;
+}
+
+/* Canvas border and spacing */
+#resultCanvas {
+  border: 1px solid #ddd;
+  margin-top: 16px;
+}
+
+/* Results panel spacing */
+#results p {
+  margin-bottom: 8px;
+}
+
+/* Spinner alignment */
+#spinner .spinner-border {
+  width: 3rem;
+  height: 3rem;
+}

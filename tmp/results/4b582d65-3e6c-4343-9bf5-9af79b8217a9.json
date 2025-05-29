@@ -1,0 +1,38 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        255,
+        137,
+        142,
+        142
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        36,
+        88,
+        627,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "bottle",
+      "box": [
+        522,
+        166,
+        591,
+        360
+      ]
+    }
+  ],
+  "transcript": "Bottle. Bottle."
+}

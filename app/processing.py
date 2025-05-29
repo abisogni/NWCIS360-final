@@ -1,10 +1,14 @@
+# processing.py
+
 import os
 import json
 from pathlib import Path
+
 from preprocess.preprocess import extract_frames, extract_audio
 from models.face_detector import FaceDetector
 from models.object_tracker import ObjectTracker
 from models.speech_to_text import SpeechRecognizer
+from googletrans import Translator
 
 # Set up paths relative to the project root
 BASE_DIR     = Path(__file__).resolve().parent.parent
@@ -23,8 +27,9 @@ def process_job(job_id: str, filename: str):
     1) Preprocess video → frames + audio
     2) Run face detection on each frame
     3) Run object tracking on each frame
-    4) Transcribe audio
-    5) Save JSON result to tmp/results/<job_id>.json
+    4) Transcribe audio (German)
+    5) Translate detected object label to German
+    6) Save JSON result to tmp/results/<job_id>.json
     """
     # Paths
     job_folder  = UPLOAD_DIR / job_id
@@ -37,10 +42,11 @@ def process_job(job_id: str, filename: str):
     extract_frames(str(video_path), str(frames_out), fps=1)
     extract_audio(str(video_path), str(audio_out))
 
-    # 2) Models
-    fd      = FaceDetector()
-    ot      = ObjectTracker()
-    sr      = SpeechRecognizer(model_size="small")
+    # 2) Initialize models
+    fd = FaceDetector()
+    ot = ObjectTracker()
+    sr = SpeechRecognizer(model_size="small")
+    translator = Translator(service_urls=['translate.googleapis.com'])
 
     faces_list   = []
     objects_list = []
@@ -68,16 +74,33 @@ def process_job(job_id: str, filename: str):
                 "box":   obj["box"]
             })
 
-    # 4) Speech
+    # 4) Speech transcription (expects German spoken)
     transcript = sr.transcribe_audio(str(audio_out))
 
-    # 5) Aggregate & write
+    # 5) Pick primary detected object (filter out generic "person")
+    filtered = [o for o in objects_list if o["label"].lower() != "person"]
+    if filtered:
+        label_english = filtered[0]["label"]
+        # translate to German
+        try:
+            label_german = translator.translate(label_english, dest="de").text
+            print(f"[debug] translate('{label_english}') → '{label_german}'")
+        except Exception:
+            # fallback to English if translation fails
+            label_german = label_english
+    else:
+        label_english = None
+        label_german  = None
+
+    # 6) Aggregate & write result JSON
     result = {
-        "faces":     faces_list,
-        "objects":   objects_list,
-        "transcript": transcript
+        "faces":          faces_list,
+        "objects":        objects_list,
+        "transcript":     transcript,
+        "label_english":  label_english,
+        "label_german":   label_german
     }
-    with open(result_file, "w") as f:
-        json.dump(result, f, indent=2)
+    with open(result_file, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
 
     return result_file

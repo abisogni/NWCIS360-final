@@ -1,0 +1,51 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        253,
+        135,
+        149,
+        149
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        35,
+        84,
+        619,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        500,
+        194,
+        529,
+        309
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        500,
+        193,
+        530,
+        383
+      ]
+    }
+  ],
+  "transcript": "Gabbel.",
+  "label_english": "fork",
+  "label_german": "Gabel"
+}

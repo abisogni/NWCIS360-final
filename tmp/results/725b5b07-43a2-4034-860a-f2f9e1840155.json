@@ -1,0 +1,40 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        243,
+        141,
+        168,
+        168
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        25,
+        87,
+        634,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        504,
+        180,
+        535,
+        304
+      ]
+    }
+  ],
+  "transcript": "Gabel.",
+  "label_english": "fork",
+  "label_german": "Gabel"
+}

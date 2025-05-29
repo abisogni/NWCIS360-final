@@ -1,0 +1,40 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        251,
+        141,
+        156,
+        156
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        38,
+        87,
+        640,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "bottle",
+      "box": [
+        525,
+        174,
+        593,
+        381
+      ]
+    }
+  ],
+  "transcript": "Flasche.",
+  "label_english": "bottle",
+  "label_german": "bottle"
+}

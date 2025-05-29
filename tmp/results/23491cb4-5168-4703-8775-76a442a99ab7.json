@@ -1,0 +1,275 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        234,
+        128,
+        173,
+        173
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "box": [
+        232,
+        121,
+        157,
+        157
+      ]
+    },
+    {
+      "frame": "frame_0002.jpg",
+      "box": [
+        233,
+        124,
+        144,
+        144
+      ]
+    },
+    {
+      "frame": "frame_0003.jpg",
+      "box": [
+        237,
+        128,
+        136,
+        136
+      ]
+    },
+    {
+      "frame": "frame_0004.jpg",
+      "box": [
+        229,
+        130,
+        127,
+        127
+      ]
+    },
+    {
+      "frame": "frame_0005.jpg",
+      "box": [
+        232,
+        129,
+        124,
+        124
+      ]
+    },
+    {
+      "frame": "frame_0006.jpg",
+      "box": [
+        232,
+        128,
+        127,
+        127
+      ]
+    },
+    {
+      "frame": "frame_0007.jpg",
+      "box": [
+        233,
+        128,
+        131,
+        131
+      ]
+    },
+    {
+      "frame": "frame_0008.jpg",
+      "box": [
+        234,
+        130,
+        128,
+        128
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        45,
+        73,
+        579,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "bottle",
+      "box": [
+        452,
+        167,
+        528,
+        409
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        43,
+        70,
+        561,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0002.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        30,
+        78,
+        554,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0002.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        414,
+        156,
+        483,
+        363
+      ]
+    },
+    {
+      "frame": "frame_0003.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        34,
+        80,
+        556,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0003.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        417,
+        156,
+        484,
+        359
+      ]
+    },
+    {
+      "frame": "frame_0004.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        14,
+        83,
+        529,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0004.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        398,
+        145,
+        460,
+        329
+      ]
+    },
+    {
+      "frame": "frame_0005.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        14,
+        86,
+        527,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0005.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        399,
+        150,
+        459,
+        331
+      ]
+    },
+    {
+      "frame": "frame_0006.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        18,
+        85,
+        533,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0006.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        400,
+        152,
+        462,
+        337
+      ]
+    },
+    {
+      "frame": "frame_0007.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        12,
+        86,
+        531,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0007.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        403,
+        155,
+        463,
+        343
+      ]
+    },
+    {
+      "frame": "frame_0008.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        16,
+        86,
+        534,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0008.jpg",
+      "id": 2,
+      "label": "bottle",
+      "box": [
+        405,
+        158,
+        464,
+        344
+      ]
+    }
+  ],
+  "transcript": "D. Flasche."
+}
