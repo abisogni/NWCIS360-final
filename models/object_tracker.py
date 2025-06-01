@@ -2,15 +2,16 @@ import cv2
 from ultralytics import YOLO
 from collections import deque
 
+
 class ObjectTracker:
     def __init__(self, model_name="yolov8n.pt", max_age=5):
         """
         model_name: pretrained YOLOv8 model (e.g., yolov8n.pt for the nano model).
-        max_age: how many frames to keep “lost” tracks before dropping.
+        max_age: how many frames to keep "lost" tracks before dropping.
         """
         self.model = YOLO(model_name)
         self.next_id = 0
-        self.tracks = {}            # track_id → {'box': (x1,y1,x2,y2), 'age': 0}
+        self.tracks = {}  # track_id → {'box': (x1,y1,x2,y2), 'age': 0}
         self.max_age = max_age
 
     def _create_track(self, box):
@@ -37,13 +38,25 @@ class ObjectTracker:
         Run YOLO detection on frame, then match to existing tracks via IoU.
         Returns a list of dicts: [{'id': track_id, 'label': str, 'box': [x1,y1,x2,y2]}, ...].
         """
-        results = self.model(frame)[0]
+        # Run YOLO detection with lower confidence threshold for debugging
+        results = self.model(frame, conf=0.25, verbose=False)[0]  # Lowered confidence from default 0.5
         detections = []
+
+        print(f"\n[DEBUG] YOLO detected {len(results.boxes)} objects total")
+
         # Convert each detection to [x1,y1,x2,y2,label]
-        for *xyxy, conf, cls in results.boxes.data.tolist():
+        for i, (*xyxy, conf, cls) in enumerate(results.boxes.data.tolist()):
             x1, y1, x2, y2 = map(int, xyxy)
+            confidence = float(conf)
             label = self.model.names[int(cls)]
-            detections.append({'box': (x1, y1, x2, y2), 'label': label})
+
+            print(f"[DEBUG] Detection {i + 1}: {label} (confidence: {confidence:.2f}) at box [{x1},{y1},{x2},{y2}]")
+
+            detections.append({
+                'box': (x1, y1, x2, y2),
+                'label': label,
+                'confidence': confidence
+            })
 
         # Age existing tracks
         for tid in list(self.tracks):
@@ -66,7 +79,12 @@ class ObjectTracker:
             outputs.append({
                 'id': best_tid,
                 'label': det['label'],
-                'box': det['box']
+                'box': det['box'],
+                'confidence': det['confidence']
             })
+
+        print(f"[DEBUG] Final tracked objects: {len(outputs)}")
+        for obj in outputs:
+            print(f"[DEBUG] Tracked: {obj['label']} (ID: {obj['id']}, conf: {obj['confidence']:.2f})")
 
         return outputs

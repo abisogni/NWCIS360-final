@@ -1,0 +1,40 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        235,
+        144,
+        140,
+        140
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        40,
+        94,
+        605,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        467,
+        192,
+        494,
+        307
+      ]
+    }
+  ],
+  "transcript": "Degabbel",
+  "label_english": "fork",
+  "label_german": "Gabel"
+}

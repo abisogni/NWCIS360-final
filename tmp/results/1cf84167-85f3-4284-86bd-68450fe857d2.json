@@ -1,0 +1,68 @@
+{
+  "faces": [],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        19,
+        82,
+        616,
+        478
+      ],
+      "confidence": 0.684491753578186
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "keyboard",
+      "box": [
+        201,
+        189,
+        555,
+        309
+      ],
+      "confidence": 0.6317777037620544
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "person",
+      "box": [
+        219,
+        88,
+        343,
+        197
+      ],
+      "confidence": 0.4774389863014221
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "laptop",
+      "box": [
+        203,
+        98,
+        561,
+        309
+      ],
+      "confidence": 0.35590341687202454
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "laptop",
+      "box": [
+        202,
+        189,
+        562,
+        309
+      ],
+      "confidence": 0.3485262989997864
+    }
+  ],
+  "transcript": "Tastatur",
+  "label_english": "laptop",
+  "label_german": "Laptop"
+}

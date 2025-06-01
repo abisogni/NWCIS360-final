@@ -1,29 +1,47 @@
-// static/app.js
-// Handles recording, upload, polling, and rendering results
-
 // DOM elements
-const preview        = document.getElementById('preview');
-const recordBtn      = document.getElementById('recordBtn');
-const spinner        = document.getElementById('spinner');
-const resultsPanel   = document.getElementById('results');
-const errorMsg       = document.getElementById('errorMsg');
-const transcriptEl   = document.getElementById('transcript');
-const objectLabelEl  = document.getElementById('objectLabel');
-const correctnessEl  = document.getElementById('correctness');
-const canvas         = document.getElementById('resultCanvas');
-const ctx            = canvas.getContext('2d');
+const preview = document.getElementById('preview');
+const recordBtn = document.getElementById('recordBtn');
+const newRecordingBtn = document.getElementById('newRecordingBtn');
+const spinner = document.getElementById('spinner');
+const resultsPanel = document.getElementById('results');
+const errorMsg = document.getElementById('errorMsg');
+const transcriptEl = document.getElementById('transcript');
+const objectLabelEl = document.getElementById('objectLabel');
+const correctnessEl = document.getElementById('correctness');
 
 let mediaRecorder;
 let recordedBlobs;
 let recording = false;
 let jobId;
+let currentStream;
 
-// Initialize video preview
+// Initialize video preview with enhanced error handling
 async function initCamera() {
+  console.log('Attempting to initialize camera...');
+
   try {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    // First check if getUserMedia is supported
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      throw new Error('getUserMedia is not supported in this browser');
+    }
+
+    console.log('Requesting camera and microphone access...');
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { width: 640, height: 480 },
+      audio: true
+    });
+
+    console.log('Camera access granted, setting up stream...');
+    currentStream = stream;
     preview.srcObject = stream;
+
+    // Wait for video to load
+    preview.onloadedmetadata = function() {
+      console.log('Video preview loaded successfully');
+    };
+
     mediaRecorder = new MediaRecorder(stream);
+    console.log('MediaRecorder created successfully');
 
     mediaRecorder.ondataavailable = (event) => {
       if (!recordedBlobs) recordedBlobs = [];
@@ -33,23 +51,85 @@ async function initCamera() {
     };
 
     mediaRecorder.onstop = handleStop;
+
+    console.log('Camera initialization complete!');
+
   } catch (err) {
-    showError('Camera access denied or unavailable.');
+    console.error('Camera initialization error:', err);
+    let errorMessage = 'Camera access failed: ';
+
+    if (err.name === 'NotAllowedError') {
+      errorMessage += 'Please allow camera and microphone access and refresh the page.';
+    } else if (err.name === 'NotFoundError') {
+      errorMessage += 'No camera found. Please connect a camera and refresh.';
+    } else if (err.name === 'NotReadableError') {
+      errorMessage += 'Camera is being used by another application.';
+    } else {
+      errorMessage += err.message;
+    }
+
+    showError(errorMessage);
   }
 }
 
-// Start or stop recording
+// Enhanced record button handling
 recordBtn.addEventListener('click', () => {
   if (!recording) {
-    recordedBlobs = [];
-    mediaRecorder.start();
-    recordBtn.textContent = 'Stop & Upload';
-    recording = true;
+    startRecording();
   } else {
-    mediaRecorder.stop();
-    recordBtn.disabled = true; // prevent double clicks
+    stopRecording();
   }
 });
+
+// New recording button handling
+newRecordingBtn.addEventListener('click', () => {
+  resetForNewRecording();
+});
+
+// Start recording function
+function startRecording() {
+  recordedBlobs = [];
+  mediaRecorder.start();
+  recordBtn.innerHTML = '<i class="fas fa-stop-circle me-2"></i>Stop & Analyze';
+  recordBtn.classList.add('recording');
+  recording = true;
+
+  // Hide previous results and errors
+  hideAllPanels();
+}
+
+// Stop recording function
+function stopRecording() {
+  mediaRecorder.stop();
+  recordBtn.disabled = true;
+  recordBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+}
+
+// Reset for new recording
+function resetForNewRecording() {
+  // Hide results and show live preview
+  hideAllPanels();
+
+  // Reset button states
+  recordBtn.classList.remove('d-none');
+  newRecordingBtn.classList.add('d-none');
+  resetRecordButton();
+
+  // Clear previous results
+  clearResults();
+
+  // Restart camera preview if needed
+  if (!currentStream || !currentStream.active) {
+    initCamera();
+  }
+}
+
+// Hide all result/error panels
+function hideAllPanels() {
+  resultsPanel.classList.add('d-none');
+  errorMsg.classList.add('d-none');
+  spinner.classList.add('d-none');
+}
 
 // Handle end of recording
 async function handleStop() {
@@ -59,12 +139,16 @@ async function handleStop() {
     pollForResult(jobId, blob);
   } catch (err) {
     showError(err);
+    resetRecordButton();
   }
 }
 
 // Upload recorded video to API
 async function uploadVideo(blob) {
   spinner.classList.remove('d-none');
+  hideAllPanels();
+  spinner.classList.remove('d-none'); // Show spinner
+
   const formData = new FormData();
   formData.append('file', blob, 'recording.webm');
 
@@ -79,79 +163,75 @@ async function uploadVideo(blob) {
 // Poll the API for results
 function pollForResult(jobId, blob) {
   const interval = setInterval(async () => {
-    const res = await fetch(`/result/${jobId}`);
-    const data = await res.json();
-    if (data.status === 'completed') {
+    try {
+      const res = await fetch(`/result/${jobId}`);
+      const data = await res.json();
+      if (data.status === 'completed') {
+        clearInterval(interval);
+        spinner.classList.add('d-none');
+        renderResults(data.result);
+        showNewRecordingOption();
+      }
+    } catch (err) {
       clearInterval(interval);
-      spinner.classList.add('d-none');
-      renderResults(data.result, blob);
+      showError('Failed to get results');
+      resetRecordButton();
     }
   }, 2000);
 }
 
-// Render transcript, object label, correctness, and draw boxes
-function renderResults(result, blob) {
-  // Show results panel
+// Simplified results rendering (no canvas)
+function renderResults(result) {
   resultsPanel.classList.remove('d-none');
 
-  // 1) Display transcript (in German)
-  transcriptEl.textContent = result.transcript;
+  // Display transcript
+  transcriptEl.textContent = result.transcript || 'No speech detected';
 
-  // 2) Use the German label from the back-end
-  //    (falls back to 'N/A' if translation was not possible)
-  const labelGer = result.label_german || 'N/A';
+  // Display German label
+  const labelGer = result.label_german || 'No object detected';
   objectLabelEl.textContent = labelGer;
 
-  // 3) Normalize & exact‑match the two German strings (strip punctuation)
-  const cleanTranscript = result.transcript
+  // Enhanced correctness display
+  const cleanTranscript = (result.transcript || '')
       .trim()
-      .replace(/[.,!?]$/g, '')      // remove trailing .,!?
+      .replace(/[.,!?]$/g, '')
       .toLowerCase();
   const cleanLabel = labelGer.toLowerCase();
   const correct = cleanTranscript === cleanLabel;
-  correctnessEl.textContent = correct ? 'Correct' : 'Incorrect';
 
-  // 4) Draw middle frame and overlay boxes
-  const recordedVideo = document.createElement('video');
-  recordedVideo.src = URL.createObjectURL(blob);
-  recordedVideo.muted = true;
-  recordedVideo.playsInline = true;
-
-  recordedVideo.addEventListener('loadedmetadata', () => {
-    recordedVideo.currentTime = recordedVideo.duration / 2;
-  });
-
-  recordedVideo.addEventListener('seeked', () => {
-    // match canvas to video size
-    canvas.width  = recordedVideo.videoWidth;
-    canvas.height = recordedVideo.videoHeight;
-
-    // draw frame
-    ctx.drawImage(recordedVideo, 0, 0, canvas.width, canvas.height);
-
-    // draw face boxes in red
-    ctx.lineWidth   = 2;
-    ctx.strokeStyle = 'red';
-    result.faces.forEach(f => {
-      const [x, y, w, h] = f.box;
-      ctx.strokeRect(x, y, w, h);
-    });
-
-    // draw object boxes in blue (for context)
-    ctx.strokeStyle = 'blue';
-    result.objects.forEach(o => {
-      const [x, y, x2, y2] = o.box;
-      ctx.strokeRect(x, y, x2 - x, y2 - y);
-    });
-  });
+  correctnessEl.innerHTML = correct
+    ? '<i class="fas fa-check text-success me-2"></i>Correct! Well done!'
+    : '<i class="fas fa-times text-warning me-2"></i>Not quite right';
 }
 
-// Display error message
+// Show new recording option
+function showNewRecordingOption() {
+  recordBtn.classList.add('d-none');
+  newRecordingBtn.classList.remove('d-none');
+}
+
+// Enhanced error handling
 function showError(msg) {
-  spinner.classList.add('d-none');
-  errorMsg.textContent = msg;
+  hideAllPanels();
+  errorMsg.querySelector('span').textContent = msg;
   errorMsg.classList.remove('d-none');
+  resetRecordButton();
 }
 
-// Kick off camera init
+// Reset record button state
+function resetRecordButton() {
+  recordBtn.innerHTML = '<i class="fas fa-play-circle me-2"></i>Start Recording';
+  recordBtn.classList.remove('recording');
+  recordBtn.disabled = false;
+  recording = false;
+}
+
+// Clear previous results
+function clearResults() {
+  transcriptEl.textContent = '—';
+  objectLabelEl.textContent = '—';
+  correctnessEl.textContent = '—';
+}
+
+// Initialize camera on load
 initCamera();

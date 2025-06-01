@@ -1,0 +1,32 @@
+{
+  "faces": [],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "keyboard",
+      "box": [
+        157,
+        202,
+        640,
+        366
+      ],
+      "confidence": 0.7793631553649902
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "person",
+      "box": [
+        225,
+        95,
+        347,
+        205
+      ],
+      "confidence": 0.6075437068939209
+    }
+  ],
+  "transcript": "Tastatur",
+  "label_english": "keyboard",
+  "label_german": "Tastatur"
+}

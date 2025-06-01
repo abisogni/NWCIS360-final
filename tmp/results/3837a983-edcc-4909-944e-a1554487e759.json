@@ -1,0 +1,42 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        212,
+        139,
+        169,
+        169
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        20,
+        84,
+        580,
+        478
+      ],
+      "confidence": 0.9415733814239502
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "cup",
+      "box": [
+        457,
+        205,
+        549,
+        308
+      ],
+      "confidence": 0.7095579504966736
+    }
+  ],
+  "transcript": "Tasse.",
+  "label_english": "cup",
+  "label_german": "Tasse"
+}

@@ -1,0 +1,62 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        239,
+        142,
+        134,
+        134
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        32,
+        95,
+        613,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        467,
+        183,
+        495,
+        290
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        467,
+        183,
+        500,
+        371
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "potted plant",
+      "box": [
+        221,
+        138,
+        241,
+        170
+      ]
+    }
+  ],
+  "transcript": "Mein",
+  "label_english": "fork",
+  "label_german": "Gabel"
+}

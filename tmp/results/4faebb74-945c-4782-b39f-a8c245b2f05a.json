@@ -1,0 +1,56 @@
+{
+  "faces": [],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "keyboard",
+      "box": [
+        178,
+        225,
+        639,
+        368
+      ],
+      "confidence": 0.756166398525238
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "person",
+      "box": [
+        14,
+        86,
+        628,
+        478
+      ],
+      "confidence": 0.5025419592857361
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "person",
+      "box": [
+        225,
+        95,
+        353,
+        226
+      ],
+      "confidence": 0.39044705033302307
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 3,
+      "label": "person",
+      "box": [
+        164,
+        95,
+        365,
+        426
+      ],
+      "confidence": 0.33858343958854675
+    }
+  ],
+  "transcript": "Testatur",
+  "label_english": "keyboard",
+  "label_german": "keyboard"
+}

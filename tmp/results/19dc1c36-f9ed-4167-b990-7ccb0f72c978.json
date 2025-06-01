@@ -1,0 +1,29 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        224,
+        146,
+        135,
+        135
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        43,
+        95,
+        622,
+        479
+      ]
+    }
+  ],
+  "transcript": "Komm' it out!",
+  "label_english": null,
+  "label_german": null
+}

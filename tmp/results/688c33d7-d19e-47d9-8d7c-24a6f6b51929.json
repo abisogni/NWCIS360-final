@@ -1,0 +1,51 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        548,
+        306,
+        52,
+        52
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        233,
+        154,
+        158,
+        158
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        22,
+        102,
+        616,
+        479
+      ],
+      "confidence": 0.9335464239120483
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "cup",
+      "box": [
+        476,
+        221,
+        564,
+        325
+      ],
+      "confidence": 0.7237656116485596
+    }
+  ],
+  "transcript": "Di tasse",
+  "label_english": "cup",
+  "label_german": "cup"
+}

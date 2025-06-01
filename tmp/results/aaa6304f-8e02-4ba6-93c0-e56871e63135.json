@@ -1,0 +1,51 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        344,
+        18,
+        69,
+        69
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        222,
+        154,
+        125,
+        125
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        16,
+        106,
+        486,
+        479
+      ],
+      "confidence": 0.8544862866401672
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "potted plant",
+      "box": [
+        412,
+        132,
+        431,
+        170
+      ],
+      "confidence": 0.34131601452827454
+    }
+  ],
+  "transcript": "Schuhe.",
+  "label_english": "potted plant",
+  "label_german": "potted plant"
+}

@@ -1,0 +1,42 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        200,
+        134,
+        158,
+        158
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        43,
+        95,
+        627,
+        478
+      ],
+      "confidence": 0.9290043115615845
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "toothbrush",
+      "box": [
+        238,
+        204,
+        546,
+        299
+      ],
+      "confidence": 0.36701297760009766
+    }
+  ],
+  "transcript": "Messer.",
+  "label_english": "toothbrush",
+  "label_german": "Zahnbürste"
+}

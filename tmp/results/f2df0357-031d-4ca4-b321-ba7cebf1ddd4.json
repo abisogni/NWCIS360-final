@@ -1,0 +1,78 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        434,
+        397,
+        76,
+        76
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "keyboard",
+      "box": [
+        61,
+        212,
+        569,
+        361
+      ],
+      "confidence": 0.8428237438201904
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "person",
+      "box": [
+        225,
+        89,
+        428,
+        215
+      ],
+      "confidence": 0.31903278827667236
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        70,
+        90,
+        440,
+        377
+      ],
+      "confidence": 0.28309154510498047
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "person",
+      "box": [
+        31,
+        352,
+        632,
+        479
+      ],
+      "confidence": 0.28228411078453064
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        212,
+        90,
+        437,
+        370
+      ],
+      "confidence": 0.26712721586227417
+    }
+  ],
+  "transcript": "Tastatur",
+  "label_english": "keyboard",
+  "label_german": "keyboard"
+}

@@ -1,0 +1,71 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        219,
+        146,
+        142,
+        142
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "box": [
+        220,
+        145,
+        143,
+        143
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        45,
+        96,
+        593,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "cup",
+      "box": [
+        447,
+        229,
+        533,
+        331
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        43,
+        95,
+        603,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0001.jpg",
+      "id": 1,
+      "label": "cup",
+      "box": [
+        449,
+        231,
+        537,
+        334
+      ]
+    }
+  ],
+  "transcript": "",
+  "label_english": "cup",
+  "label_german": "Tasse"
+}

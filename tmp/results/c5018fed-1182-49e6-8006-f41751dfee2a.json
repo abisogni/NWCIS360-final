@@ -1,0 +1,40 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        226,
+        128,
+        160,
+        160
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        21,
+        73,
+        638,
+        478
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "book",
+      "box": [
+        455,
+        125,
+        639,
+        350
+      ]
+    }
+  ],
+  "transcript": "Das Buch",
+  "label_english": "book",
+  "label_german": "Buch"
+}

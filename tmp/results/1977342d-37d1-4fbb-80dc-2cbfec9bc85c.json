@@ -1,0 +1,54 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        223,
+        153,
+        149,
+        149
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        28,
+        108,
+        593,
+        478
+      ],
+      "confidence": 0.9008486270904541
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        498,
+        176,
+        529,
+        305
+      ],
+      "confidence": 0.4014682173728943
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "potted plant",
+      "box": [
+        221,
+        137,
+        238,
+        168
+      ],
+      "confidence": 0.3426647186279297
+    }
+  ],
+  "transcript": "Die Gabel.",
+  "label_english": "fork",
+  "label_german": "fork"
+}

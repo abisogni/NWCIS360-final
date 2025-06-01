@@ -1,0 +1,44 @@
+{
+  "faces": [],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "keyboard",
+      "box": [
+        194,
+        194,
+        609,
+        320
+      ],
+      "confidence": 0.8777159452438354
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "person",
+      "box": [
+        209,
+        107,
+        350,
+        197
+      ],
+      "confidence": 0.5608578324317932
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "person",
+      "box": [
+        9,
+        79,
+        633,
+        478
+      ],
+      "confidence": 0.4334273636341095
+    }
+  ],
+  "transcript": "",
+  "label_english": "keyboard",
+  "label_german": "keyboard"
+}

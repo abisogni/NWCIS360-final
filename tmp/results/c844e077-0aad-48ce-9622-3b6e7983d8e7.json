@@ -1,0 +1,78 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        213,
+        135,
+        131,
+        131
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        39,
+        91,
+        627,
+        479
+      ],
+      "confidence": 0.9420655965805054
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "apple",
+      "box": [
+        510,
+        223,
+        547,
+        267
+      ],
+      "confidence": 0.37956228852272034
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "apple",
+      "box": [
+        468,
+        240,
+        490,
+        256
+      ],
+      "confidence": 0.28851643204689026
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 3,
+      "label": "baseball bat",
+      "box": [
+        293,
+        210,
+        591,
+        313
+      ],
+      "confidence": 0.2849498689174652
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 4,
+      "label": "apple",
+      "box": [
+        490,
+        218,
+        521,
+        259
+      ],
+      "confidence": 0.28061243891716003
+    }
+  ],
+  "transcript": "Sahn Birthday!!! graphics",
+  "label_english": "apple",
+  "label_german": "Apfel"
+}

@@ -1,0 +1,38 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        532,
+        166,
+        75,
+        75
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        223,
+        146,
+        144,
+        144
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        30,
+        94,
+        626,
+        479
+      ]
+    }
+  ],
+  "transcript": "Burgg.",
+  "label_english": null,
+  "label_german": null
+}

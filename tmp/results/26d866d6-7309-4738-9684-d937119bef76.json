@@ -1,0 +1,66 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        218,
+        154,
+        156,
+        156
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        11,
+        112,
+        622,
+        478
+      ],
+      "confidence": 0.9212967753410339
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        477,
+        191,
+        503,
+        296
+      ],
+      "confidence": 0.36837339401245117
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        476,
+        191,
+        504,
+        374
+      ],
+      "confidence": 0.32778650522232056
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        477,
+        191,
+        503,
+        260
+      ],
+      "confidence": 0.27214017510414124
+    }
+  ],
+  "transcript": "Nun, wir holen dieikk肚rah� an, daskey Babyас ist arrange zu steigen, abooked. Guten Appetit, bis jetzt bei OLLO DREVOS. Sie sehen nun kurz auf die K Little Brain. Ahh,",
+  "label_english": "fork",
+  "label_german": "fork"
+}

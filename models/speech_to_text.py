@@ -1,7 +1,7 @@
 import whisper
 
 class SpeechRecognizer:
-    def __init__(self, model_size: str = "small"):
+    def __init__(self, model_size: str = "base"):
         """
         model_size: one of tiny, base, small, medium, large.
         Smaller models are faster but less accurate.
@@ -12,6 +12,11 @@ class SpeechRecognizer:
         """
         Transcribe the given WAV file and return the raw transcript string.
         """
-        result = self.model.transcribe(audio_path, language="de")
+        result = self.model.transcribe(
+            audio_path,
+            language="de",
+            word_timestamps=False,
+            condition_on_previous_text=False
+        )
         # result['text'] contains your German transcript
         return result["text"].strip()

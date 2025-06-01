@@ -1,0 +1,30 @@
+{
+  "faces": [],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        41,
+        74,
+        593,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "cell phone",
+      "box": [
+        283,
+        182,
+        386,
+        316
+      ]
+    }
+  ],
+  "transcript": "TASSA",
+  "label_english": "cell phone",
+  "label_german": "Handy"
+}

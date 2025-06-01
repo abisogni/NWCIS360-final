@@ -1,0 +1,62 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        276,
+        134,
+        150,
+        150
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        47,
+        87,
+        577,
+        478
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "toothbrush",
+      "box": [
+        265,
+        180,
+        405,
+        287
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "toothbrush",
+      "box": [
+        267,
+        190,
+        553,
+        364
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 3,
+      "label": "potted plant",
+      "box": [
+        221,
+        137,
+        241,
+        169
+      ]
+    }
+  ],
+  "transcript": "Mir ist ein Billie. της verordnen für das",
+  "label_english": "toothbrush",
+  "label_german": "Zahnbürste"
+}

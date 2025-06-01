@@ -1,0 +1,40 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        257,
+        160,
+        124,
+        124
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        45,
+        109,
+        540,
+        479
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "chair",
+      "box": [
+        368,
+        230,
+        405,
+        277
+      ]
+    }
+  ],
+  "transcript": "Flasche.",
+  "label_english": "chair",
+  "label_german": "Stuhl"
+}

@@ -1,0 +1,44 @@
+{
+  "faces": [],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "keyboard",
+      "box": [
+        138,
+        189,
+        581,
+        341
+      ],
+      "confidence": 0.8800302147865295
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "person",
+      "box": [
+        18,
+        335,
+        597,
+        479
+      ],
+      "confidence": 0.3605240285396576
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 2,
+      "label": "person",
+      "box": [
+        213,
+        91,
+        337,
+        193
+      ],
+      "confidence": 0.2602473199367523
+    }
+  ],
+  "transcript": "Testtour",
+  "label_english": "keyboard",
+  "label_german": "Tastatur"
+}

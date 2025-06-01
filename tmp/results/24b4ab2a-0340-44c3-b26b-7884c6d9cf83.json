@@ -1,0 +1,42 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        227,
+        157,
+        149,
+        149
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        29,
+        110,
+        619,
+        479
+      ],
+      "confidence": 0.9422731995582581
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "cell phone",
+      "box": [
+        489,
+        228,
+        567,
+        318
+      ],
+      "confidence": 0.3327179551124573
+    }
+  ],
+  "transcript": "Tasse",
+  "label_english": "cell phone",
+  "label_german": "cell phone"
+}

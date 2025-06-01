@@ -1,0 +1,30 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        226,
+        141,
+        137,
+        137
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        38,
+        89,
+        587,
+        479
+      ],
+      "confidence": 0.9073554277420044
+    }
+  ],
+  "transcript": "Hund.",
+  "label_english": null,
+  "label_german": null
+}

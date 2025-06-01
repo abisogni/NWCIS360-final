@@ -1,0 +1,38 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        345,
+        18,
+        70,
+        70
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        253,
+        136,
+        161,
+        161
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        35,
+        79,
+        624,
+        479
+      ]
+    }
+  ],
+  "transcript": "Erliebst das etwas",
+  "label_english": null,
+  "label_german": null
+}

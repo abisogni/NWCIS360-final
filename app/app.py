@@ -2,12 +2,17 @@ from pathlib import Path
 import os
 import uuid
 import json
+import sys
 from flask import Flask, request, jsonify, render_template
 
-from app.processing import process_job  # pipeline orchestrator
+# Add project root to path for imports
+project_root = Path(__file__).resolve().parent.parent  # Goes from /app to /Project
+sys.path.append(str(project_root))
 
-# Base directories
-BASE_DIR    = Path(__file__).resolve().parent.parent  # /Final/Project
+from processing import process_job  # pipeline orchestrator
+
+# Base directories - pointing to correct locations
+BASE_DIR    = Path(__file__).resolve().parent.parent  # /Project folder
 UPLOAD_DIR  = BASE_DIR / "tmp" / "uploads"
 RESULTS_DIR = BASE_DIR / "tmp" / "results"
 TEMPLATES_DIR = BASE_DIR / "templates"
@@ -17,7 +22,7 @@ STATIC_DIR    = BASE_DIR / "static"
 for d in (UPLOAD_DIR, RESULTS_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
-# Flask setup: serve templates and static from app/
+# Flask setup: serve templates and static from correct locations
 app = Flask(
     __name__,
     template_folder=str(TEMPLATES_DIR),
@@ -69,5 +74,10 @@ def get_result(job_id):
         return jsonify({'status': 'pending'}), 200
 
 if __name__ == '__main__':
-    # Run from project root: python -m app.app
+    # Run from project root: cd /Users/alex_at_home/NW/CIS-360/Final/Project
+    # Then: python app/app.py
+    print(f"Templates directory: {TEMPLATES_DIR}")
+    print(f"Static directory: {STATIC_DIR}")
+    print(f"Upload directory: {UPLOAD_DIR}")
+    print(f"Results directory: {RESULTS_DIR}")
     app.run(debug=True)

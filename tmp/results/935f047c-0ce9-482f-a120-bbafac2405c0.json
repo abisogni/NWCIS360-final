@@ -1,0 +1,30 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        248,
+        147,
+        158,
+        158
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        30,
+        97,
+        638,
+        479
+      ],
+      "confidence": 0.9207066297531128
+    }
+  ],
+  "transcript": "Kommt her.",
+  "label_english": null,
+  "label_german": null
+}

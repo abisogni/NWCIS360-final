@@ -1,0 +1,29 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        244,
+        131,
+        150,
+        150
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        14,
+        76,
+        584,
+        479
+      ]
+    }
+  ],
+  "transcript": "Messer.",
+  "label_english": null,
+  "label_german": null
+}
