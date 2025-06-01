@@ -5,6 +5,8 @@ class SpeechRecognizer:
         """
         model_size: one of tiny, base, small, medium, large.
         Smaller models are faster but less accurate.
+        Originally tried small, but was getting inconsistent
+        translations and changed to base model.
         """
         self.model = whisper.load_model(model_size)
 

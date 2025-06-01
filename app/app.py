@@ -74,8 +74,6 @@ def get_result(job_id):
         return jsonify({'status': 'pending'}), 200
 
 if __name__ == '__main__':
-    # Run from project root: cd /Users/alex_at_home/NW/CIS-360/Final/Project
-    # Then: python app/app.py
     print(f"Templates directory: {TEMPLATES_DIR}")
     print(f"Static directory: {STATIC_DIR}")
     print(f"Upload directory: {UPLOAD_DIR}")

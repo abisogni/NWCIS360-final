@@ -1,0 +1,51 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        398,
+        384,
+        58,
+        58
+      ]
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        249,
+        129,
+        142,
+        142
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "bottle",
+      "box": [
+        500,
+        125,
+        567,
+        384
+      ],
+      "confidence": 0.9076617360115051
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "person",
+      "box": [
+        31,
+        79,
+        621,
+        479
+      ],
+      "confidence": 0.9050435423851013
+    }
+  ],
+  "transcript": "Flasche.",
+  "label_english": "bottle",
+  "label_german": "Flasche"
+}

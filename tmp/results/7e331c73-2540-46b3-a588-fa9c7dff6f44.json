@@ -1,0 +1,42 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        235,
+        133,
+        143,
+        143
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        35,
+        84,
+        625,
+        479
+      ],
+      "confidence": 0.9197729229927063
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "fork",
+      "box": [
+        476,
+        147,
+        502,
+        249
+      ],
+      "confidence": 0.4920303523540497
+    }
+  ],
+  "transcript": "gar bum",
+  "label_english": "fork",
+  "label_german": "Gabel"
+}

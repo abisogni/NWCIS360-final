@@ -38,7 +38,7 @@ class ObjectTracker:
         Run YOLO detection on frame, then match to existing tracks via IoU.
         Returns a list of dicts: [{'id': track_id, 'label': str, 'box': [x1,y1,x2,y2]}, ...].
         """
-        # Run YOLO detection with lower confidence threshold for debugging
+        # Adjust the confidence threshold as needed, several tried in testing
         results = self.model(frame, conf=0.25, verbose=False)[0]  # Lowered confidence from default 0.5
         detections = []
 

@@ -1,0 +1,42 @@
+{
+  "faces": [
+    {
+      "frame": "frame_0000.jpg",
+      "box": [
+        241,
+        132,
+        138,
+        138
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "frame": "frame_0000.jpg",
+      "id": 0,
+      "label": "person",
+      "box": [
+        30,
+        81,
+        615,
+        479
+      ],
+      "confidence": 0.9150122404098511
+    },
+    {
+      "frame": "frame_0000.jpg",
+      "id": 1,
+      "label": "cell phone",
+      "box": [
+        498,
+        184,
+        569,
+        314
+      ],
+      "confidence": 0.7643698453903198
+    }
+  ],
+  "transcript": "Kerzü!",
+  "label_english": "cell phone",
+  "label_german": "Handy"
+}

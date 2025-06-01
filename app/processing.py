@@ -1,5 +1,3 @@
-# processing.py
-
 import os
 import json
 import cv2
@@ -9,17 +7,16 @@ from collections import Counter
 # Import your local modules - corrected paths for your structure
 import sys
 
-sys.path.append(str(Path(__file__).resolve().parent))
-
 from preprocess.preprocess import extract_frames, extract_audio
 from models.face_detector import FaceDetector
 from models.object_tracker import ObjectTracker
 from models.speech_to_text import SpeechRecognizer
 from deep_translator import GoogleTranslator
 
+sys.path.append(str(Path(__file__).resolve().parent))
 
 # Set up paths relative to the project root (parent of app folder)
-BASE_DIR = Path(__file__).resolve().parent.parent  # This should point to Project folder
+BASE_DIR = Path(__file__).resolve().parent.parent  # Adjusting to move 2 levels
 UPLOAD_DIR = BASE_DIR / "tmp" / "uploads"
 FRAMES_DIR = BASE_DIR / "tmp" / "frames"
 AUDIO_DIR = BASE_DIR / "tmp" / "audio"
@@ -33,11 +30,11 @@ for d in (FRAMES_DIR, AUDIO_DIR, RESULTS_DIR):
 def process_job(job_id: str, filename: str):
     """
     Run the full pipeline for a given job:
-    1) Preprocess video → frames + audio
+    1) Preprocess video → extract frames (to use for object detection) + audio (for transcription)
     2) Run face detection on each frame
     3) Run object tracking on each frame
-    4) Transcribe audio (German)
-    5) Translate detected object label to German
+    4) Transcribe audio (in German)
+    5) Translate detected object labels to German
     6) Save JSON result to tmp/results/<job_id>.json
     """
     # Paths
@@ -58,7 +55,6 @@ def process_job(job_id: str, filename: str):
     fd = FaceDetector()
     ot = ObjectTracker()
     sr = SpeechRecognizer(model_size="base")
-    # No need to initialize translator with deep-translator
 
     faces_list = []
     objects_list = []
@@ -71,7 +67,7 @@ def process_job(job_id: str, filename: str):
         img = cv2.imread(str(frame_file))
         print(f"\n[DEBUG] Processing frame: {frame_file.name}")
 
-        # Faces
+        # Detect & label faces
         faces = fd.detect_faces(img)
         for box in faces:
             faces_list.append({
@@ -79,7 +75,7 @@ def process_job(job_id: str, filename: str):
                 "box": box
             })
 
-        # Objects (with enhanced debugging)
+        # Identify objects
         tracks = ot.detect_and_track(img)
         for obj in tracks:
             objects_list.append({
@@ -90,12 +86,12 @@ def process_job(job_id: str, filename: str):
                 "confidence": obj.get("confidence", 0.0)
             })
 
-    # 4) Speech transcription (expects German spoken)
+    # 4) Speech transcription (expects German)
     print(f"\n[DEBUG] Transcribing audio: {audio_out}")
     transcript = sr.transcribe_audio(str(audio_out))
     print(f"[DEBUG] Transcription result: '{transcript}'")
 
-    # 5) Enhanced object analysis with debugging
+    # 5) Object analysis with debugging
     print(f"\n[DEBUG] Total objects detected across all frames: {len(objects_list)}")
     for i, obj in enumerate(objects_list):
         print(
@@ -115,6 +111,12 @@ def process_job(job_id: str, filename: str):
         print(f"[DEBUG] Object counts: {dict(label_counts)}")
 
         # Pick the most common non-person object
+        """
+        It should be stated here that I tried different ways of getting to the intended 
+        object.  At first it wasn't an issue because I had nothing in the background,
+        but then I tried to see how things would work if I had paintings and items
+        on the dresser behind me in the video.
+        """
         most_common_label = label_counts.most_common(1)[0][0]
         primary_objects = [o for o in filtered if o["label"] == most_common_label]
         primary_object = primary_objects[0]
@@ -123,6 +125,13 @@ def process_job(job_id: str, filename: str):
         print(f"[DEBUG] Selected primary object: {label_english}")
 
         # translate to German
+        """
+        This section underwent various changes, beginning with a connection to
+        googletrans, but this came with various errors/conflicts related to 
+        httpcore and conflicting versions.  I couldn't resolve the issue, so 
+        rather than hardcode translations, I changed to deep-translator 
+        using Google Translate.
+        """
         try:
             label_german = GoogleTranslator(source='en', target='de').translate(label_english)
             print(f"[DEBUG] Translated '{label_english}' → '{label_german}'")

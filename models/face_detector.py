@@ -2,11 +2,10 @@ import cv2
 
 class FaceDetector:
     def __init__(self, cascade_path=None):
-        # Use OpenCV’s built‑in frontal‑face Haar Cascade by default
+        # Using Haar Cascade
         if cascade_path:
             self.face_cascade = cv2.CascadeClassifier(cascade_path)
         else:
-            # This path comes bundled with OpenCV
             default_path = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
             self.face_cascade = cv2.CascadeClassifier(default_path)
 
