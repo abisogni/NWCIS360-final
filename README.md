@@ -130,7 +130,7 @@ python app/app.py
 ### System Requirements
 - **Developed on**: macOS 14.6.1 (M1 chip)
 - **IDE**: PyCharm 2024.2.2 Professional
-- **Tested browsers**: Chrome, Safari
+- **Tested browsers**: Arc, Safari, Chrome
 - **Note**: Should work on Windows/Linux, but primary testing was on macOS
 
 ### Configuration
