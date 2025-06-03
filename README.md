@@ -2,7 +2,8 @@
 **AI-Powered Object Learning Application**
 
 > A German language learning tool that combines computer vision, speech recognition, and translation to help users practice object identification and pronunciation.
-
+> 
+![Sprech&Scene Interface](https://github.com/abisogni/NWCIS360-final/blob/544123dac487e109a25861ffd7299a33fe902fc9/docs/sprechen_interface.png)
 
 ## Project Overview
 
