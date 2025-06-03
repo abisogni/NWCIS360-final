@@ -26,13 +26,11 @@ This project was developed as a final assignment for **CIS-360 "AI with Deep Lea
 
 ### System Flow
 __Application Architecture__
-```
-![Application Flow](docs/Application_Architecture.png)
-```
+![Application_Architecture](https://github.com/user-attachments/assets/444c0cb3-4b89-4aaa-8629-d381821a9f18)
+
 __User Process Flow__
-```
-![User Flow](docs/User_Flow.png)
-```
+![User_Flow](https://github.com/user-attachments/assets/7aecebcf-d7aa-4237-92ab-7525e10e5c22)
+
 
 ### AI Processing Pipeline
 1. **Video Preprocessing**: Frame extraction (1 FPS) and audio extraction (WAV)
